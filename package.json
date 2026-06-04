@@ -1,0 +1,19 @@
+{
+  "name": "pokedex-typescript-lite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsduzao/pokedex-typescript-lite.git"
+  },
+  "author": "Eduardo Henrique Lisboa Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsduzao/pokedex-typescript-lite/issues"
+  },
+  "homepage": "https://github.com/itsduzao/pokedex-typescript-lite#readme"
+}
