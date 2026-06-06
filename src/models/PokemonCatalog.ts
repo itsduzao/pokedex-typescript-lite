@@ -1,6 +1,7 @@
+import { formatPokemon } from "../utils/formatPokemon.js";
 import type { PokemonSummary } from "./Pokemon.js";
 
-class PokemonCatalog {
+export class PokemonCatalog {
   private pokemonList: PokemonSummary[] = []
 
   public add(pokemon: PokemonSummary): void {
@@ -13,5 +14,17 @@ class PokemonCatalog {
 
     this.pokemonList.push(pokemon)
     console.log(`[OK] ${pokemon.name} added to the catalog.`)
+  }
+
+  public list(): void {
+    const isListEmpty = this.pokemonList.length === 0
+
+    if (isListEmpty) {
+      console.log("[WARNING] Catalog is empty")
+      return
+    }
+
+    console.log(`Current Catalog:\n${this.pokemonList.map(formatPokemon).join('\n')}
+    `)
   }
 }

@@ -1,5 +1,10 @@
+import { PokemonCatalog } from "./models/PokemonCatalog.js";
 import { fetchPokemon } from "./services/FetchPokemon.js";
 
-const pokemon = await fetchPokemon('Slowking')
+const pokemonNames = ['slowking', 'alakazam', 'ninetales', 'slowking']
+const pokemonList = await Promise.all(pokemonNames.map(name => fetchPokemon(name)))
+const pokemonCatalog = new PokemonCatalog()
 
-console.log(pokemon)
+pokemonList.forEach(pokemon => pokemon ? pokemonCatalog.add(pokemon) : null)
+
+pokemonCatalog.list()
