@@ -8,3 +8,7 @@ const pokemonCatalog = new PokemonCatalog()
 pokemonList.forEach(pokemon => pokemon ? pokemonCatalog.add(pokemon) : null)
 
 pokemonCatalog.list()
+
+pokemonCatalog.remove(38)
+
+pokemonCatalog.list()

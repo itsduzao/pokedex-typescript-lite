@@ -27,4 +27,19 @@ export class PokemonCatalog {
     console.log(`Current Catalog:\n${this.pokemonList.map(formatPokemon).join('\n')}
     `)
   }
+
+  public remove(id: number): void {
+    const foundPokemon = this.pokemonList.findIndex((pokemon => pokemon.id === id))
+
+    if (!foundPokemon) {
+      console.log('[WARNING] No Pokémon found with this id')
+      return
+    }
+
+    const pokemonName = this.pokemonList[foundPokemon]?.name
+
+    this.pokemonList.splice(foundPokemon)
+
+    console.log(`[OK] ${pokemonName} was removed from the catalog`)
+  }
 }
