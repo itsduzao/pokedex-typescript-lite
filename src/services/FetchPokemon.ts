@@ -8,7 +8,14 @@ export async function fetchPokemon(pokemonNameOrId: string): Promise<PokemonSumm
     const response = await fetch(`${POKEMON_API_URL}${pokemonNameOrId}`)
 
     if (!response.ok) {
-      console.log('[ERROR] Pokémon not found.')
+      const isNotNumber = Number.isNaN(Number.parseInt(pokemonNameOrId))
+
+      if (isNotNumber) {
+        console.log(`[ERROR] Pokémon with name ${pokemonNameOrId} not found.`)
+      } else {
+        console.log(`[ERROR] Pokémon with id ${pokemonNameOrId} not found.`)
+      }
+
       return null
     }
 
